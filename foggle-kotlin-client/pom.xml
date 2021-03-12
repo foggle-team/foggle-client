@@ -9,14 +9,8 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>foggle-java-client</artifactId>
+	<artifactId>foggle-kotlin-client</artifactId>
 	<packaging>jar</packaging>
-
-	<properties>
-		<maven.compiler.source>8</maven.compiler.source>
-		<maven.compiler.target>8</maven.compiler.target>
-		<jackson.version>2.12.2</jackson.version>
-	</properties>
 
 	<dependencies>
 		<!-- Project -->
@@ -48,13 +42,14 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
-
 		<!-- Tests -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.1</version>
 			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
+
 </project>

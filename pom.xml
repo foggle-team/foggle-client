@@ -14,19 +14,39 @@
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<retrofit.version>2.9.0</retrofit.version>
+		<jackson.version>2.12.2</jackson.version>
+		<!-- Foggle -->
 		<foggle.version>1.0.0-SNAPSHOT</foggle.version>
 	</properties>
 
 	<modules>
 		<module>foggle-java-client</module>
+		<module>foggle-kotlin-client</module>
+		<module>foggle-client-sample</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- Project -->
+			<dependency>
+				<groupId>org.foggle</groupId>
+				<artifactId>foggle-kotlin-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Foggle -->
 			<dependency>
 				<groupId>org.foggle</groupId>
 				<artifactId>foggle-core</artifactId>
 				<version>${foggle.version}</version>
+			</dependency>
+
+			<!-- Tests -->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>5.7.1</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
