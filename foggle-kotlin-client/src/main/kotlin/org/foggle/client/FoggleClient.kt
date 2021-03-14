@@ -7,12 +7,11 @@ import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.foggle.core.dto.FeatureDto
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
-import java.io.IOException
 
 class FoggleClient(baseUrl: String) {
     private val service: FoggleService
 
-    @get:Throws(IOException::class)
+//    @get:Throws(IOException::class)
     val allowedFeatures: List<FeatureDto>
         get() = service.enabledFeatures().execute().body()!!
 

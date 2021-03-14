@@ -11,18 +11,21 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
+		<java.version>1.8</java.version>
+		<kotlin.version>1.4.31</kotlin.version>
 		<retrofit.version>2.9.0</retrofit.version>
 		<jackson.version>2.12.2</jackson.version>
-		<!-- Foggle -->
-		<foggle.version>1.0.0-SNAPSHOT</foggle.version>
+		<wiremock.version>2.27.2</wiremock.version>
 	</properties>
 
 	<modules>
 		<module>foggle-java-client</module>
 		<module>foggle-kotlin-client</module>
 		<module>foggle-client-sample</module>
+		<module>foggle-core</module>
 	</modules>
 
 	<dependencyManagement>
@@ -38,7 +41,7 @@
 			<dependency>
 				<groupId>org.foggle</groupId>
 				<artifactId>foggle-core</artifactId>
-				<version>${foggle.version}</version>
+				<version>${project.version}</version>
 			</dependency>
 
 			<!-- Tests -->

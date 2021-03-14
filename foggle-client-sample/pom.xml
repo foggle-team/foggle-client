@@ -10,12 +10,20 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>foggle-client-sample</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<!-- Project -->
 		<dependency>
 			<groupId>org.foggle</groupId>
 			<artifactId>foggle-kotlin-client</artifactId>
+		</dependency>
+
+		<!-- Wiremock for sample data -->
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock-jre8-standalone</artifactId>
+			<version>${wiremock.version}</version>
 		</dependency>
 
 		<!-- Tests -->

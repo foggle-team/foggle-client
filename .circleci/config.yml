@@ -1,0 +1,34 @@
+# Java Maven CircleCI 2.0 configuration file
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+version: 2
+jobs:
+  build_maven:
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+    working_directory: ~/repo
+    #    environment:
+    #      MAVEN_OPTS: -Xmx3200m
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies- # fallback to using the latest cache if no exact match is found
+      - run: mvn -B verify
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+workflows:
+  version: 2
+  build_all:
+    jobs:
+      - build_maven:
+          requires:
+            - build_ui
