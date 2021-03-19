@@ -28,4 +28,8 @@ class FoggleClient(baseUrl: String) {
 
         service = retrofit.create(FoggleService::class.java)
     }
+
+    fun isEnabled(featurePath: String): Boolean {
+        return allowedFeatures.find { f -> f.path == featurePath } != null
+    }
 }

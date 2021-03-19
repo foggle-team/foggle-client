@@ -5,4 +5,4 @@ from it, such enabling/disable features, hierarchical view, history tracking, us
 
 This repository is the **Kotlin/Java client**
 
-*Getting started* and full documentation of client/server available at http://docs.foggle.me
+*Getting started* and full documentation of client/server available at http://docs.foggle.org

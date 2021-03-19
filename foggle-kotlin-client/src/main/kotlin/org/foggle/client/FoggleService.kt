@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface FoggleService {
-    @GET("api/client/features/enabled")
+    @GET("api/client/features/enabled/flat")
     fun enabledFeatures(): Call<List<FeatureDto>>
 }
