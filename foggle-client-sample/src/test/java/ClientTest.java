@@ -9,7 +9,7 @@ public class ClientTest {
 	@Test
 	public void getEnabledFeatures() throws IOException {
 		FoggleClient client = new FoggleClient("http://localhost:42777");
-		List<FeatureDto> features = client.getAllowedFeatures();
+		List<FeatureDto> features = client.getEnabledFeatures();
 		System.out.println(features);
 	}
 }

@@ -41,10 +41,10 @@
 	</scm>
 
 	<modules>
-		<module>foggle-java-client</module>
 		<module>foggle-kotlin-client</module>
 		<module>foggle-client-sample</module>
 		<module>foggle-core</module>
+		<module>foggle-mock</module>
 	</modules>
 
 	<dependencyManagement>
@@ -53,6 +53,11 @@
 			<dependency>
 				<groupId>org.foggle</groupId>
 				<artifactId>foggle-kotlin-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.foggle</groupId>
+				<artifactId>foggle-mock</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -68,6 +73,36 @@
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-api</artifactId>
 				<version>5.7.1</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Jackson -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-kotlin</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<!-- Kotlin -->
+			<dependency>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-stdlib-jdk8</artifactId>
+				<version>${kotlin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-test</artifactId>
+				<version>${kotlin.version}</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>

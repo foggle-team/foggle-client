@@ -9,7 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>foggle-kotlin-client</artifactId>
+	<artifactId>foggle-mock</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -18,24 +18,19 @@
 			<groupId>org.foggle</groupId>
 			<artifactId>foggle-core</artifactId>
 		</dependency>
+
+		<!-- Wiremock for sample data -->
 		<dependency>
-			<groupId>org.foggle</groupId>
-			<artifactId>foggle-mock</artifactId>
-			<scope>test</scope>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock-jre8-standalone</artifactId>
+			<version>${wiremock.version}</version>
 		</dependency>
 
-		<!-- Retrofit REST Client -->
+		<!-- Jackson serializer -->
 		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>retrofit</artifactId>
-			<version>${retrofit.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>converter-jackson</artifactId>
-			<version>${retrofit.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
 			<artifactId>jackson-module-kotlin</artifactId>
@@ -45,12 +40,10 @@
 			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
 
-		<!-- Tests -->
+		<!-- Kotlin -->
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.7.1</version>
-			<scope>test</scope>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib-jdk8</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -69,7 +62,7 @@
 						<configuration>
 							<sourceDirs>
 								<sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-								<!--								<sourceDir>${project.basedir}/src/main/java</sourceDir>-->
+								<sourceDir>${project.basedir}/src/main/java</sourceDir>
 							</sourceDirs>
 						</configuration>
 					</execution>
@@ -81,7 +74,7 @@
 						<configuration>
 							<sourceDirs>
 								<sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-								<!--								<sourceDir>${project.basedir}/src/test/java</sourceDir>-->
+								<sourceDir>${project.basedir}/src/test/java</sourceDir>
 							</sourceDirs>
 						</configuration>
 					</execution>
