@@ -65,6 +65,26 @@ class FoggleClient(baseUrl: String) {
     }
 
     /**
+     * Indicates if given feature is enabled
+     *
+     * @param feature Feature enum item containing full path
+     * @return True if feature is enabled
+     */
+    fun isEnabled(feature: FeatureEnum): Boolean {
+        return isEnabled(feature.getPath())
+    }
+
+    /**
+     * Indicates if given feature is disabled
+     *
+     * @param feature Feature enum item containing full path
+     * @return True if feature is enabled
+     */
+    fun isDisabled(feature: FeatureEnum): Boolean {
+        return isDisabled(feature.getPath())
+    }
+
+    /**
      * Returns the list of enabled features, starting with the given path
      *
      * @return List of enabled features

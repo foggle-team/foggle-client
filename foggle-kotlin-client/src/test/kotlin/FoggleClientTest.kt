@@ -1,3 +1,4 @@
+import org.foggle.client.FeatureEnum
 import org.foggle.client.FoggleClient
 import org.foggle.mock.SampleFoggleBackend
 import org.junit.jupiter.api.AfterAll
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
-@DisplayName("Foggle Client")
+@DisplayName("Foggle client")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class FoggleClientTest {
     private val mockBackend = SampleFoggleBackend()
@@ -45,5 +46,27 @@ class FoggleClientTest {
         val features = client.getEnabledFeatures("my_app")
         assertEquals(1, features.size)
         assertEquals("some_feature", features[0].name)
+    }
+
+    @Test
+    fun `should indicate if enabled feature enum is enabled`() {
+        assertTrue(client.isEnabled(AppFeature.SOME_FEATURE))
+        assertFalse(client.isDisabled(AppFeature.SOME_FEATURE))
+    }
+
+    @Test
+    fun `should indicate if disabled feature enum is enabled`() {
+        assertFalse(client.isEnabled(AppFeature.SOMETHING_DISABLED))
+        assertTrue(client.isDisabled(AppFeature.SOMETHING_DISABLED))
+    }
+}
+
+enum class AppFeature(private val path: String) : FeatureEnum {
+    SOME_FEATURE("my_app:some_feature"),
+    ANOTHER_FEATURE("another_feature"),
+    SOMETHING_DISABLED("something_disabled");
+
+    override fun getPath(): String {
+        return path
     }
 }
