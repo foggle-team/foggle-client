@@ -19,6 +19,7 @@
 		<retrofit.version>2.9.0</retrofit.version>
 		<jackson.version>2.12.2</jackson.version>
 		<wiremock.version>2.27.2</wiremock.version>
+		<spring-boot.version>2.4.2</spring-boot.version>
 	</properties>
 
 	<licenses>
@@ -45,6 +46,8 @@
 		<module>foggle-client-sample</module>
 		<module>foggle-core</module>
 		<module>foggle-mock</module>
+		<module>foggle-client-spring</module>
+		<module>foggle-client-sample-spring</module>
 	</modules>
 
 	<dependencyManagement>
@@ -53,6 +56,11 @@
 			<dependency>
 				<groupId>org.foggle</groupId>
 				<artifactId>foggle-kotlin-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.foggle</groupId>
+				<artifactId>foggle-client-spring</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -90,6 +98,16 @@
 			<dependency>
 				<groupId>com.fasterxml.jackson.datatype</groupId>
 				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
 
