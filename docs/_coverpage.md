@@ -1,6 +1,6 @@
 ![logo](_media/icon.svg)
 
-# foggle <small>0.1</small>
+# foggly <small>0.1</small>
 
 > Feature toggling made easy.
 

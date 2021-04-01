@@ -4,8 +4,8 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.foggle</groupId>
-	<artifactId>foggle-client</artifactId>
+	<groupId>org.foggly</groupId>
+	<artifactId>foggly-client</artifactId>
 	<packaging>pom</packaging>
 
 	<version>1.0.0-SNAPSHOT</version>
@@ -30,49 +30,49 @@
 	</licenses>
 	<developers>
 		<developer>
-			<id>foggle-team</id>
-			<name>Foggle Team</name>
-			<email>team@foggle.org</email>
+			<id>foggly-org</id>
+			<name>Foggly Team</name>
+			<email>team@foggly.org</email>
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git@github.com:foggle-team/foggle-client.git</connection>
-		<developerConnection>scm:git:ssh://github.com:foggle-team/foggle-client.git</developerConnection>
-		<url>https://github.com/foggle-team/foggle-client/tree/master</url>
+		<connection>scm:git:git@github.com:foggly-org/foggly-client.git</connection>
+		<developerConnection>scm:git:ssh://github.com:foggly-org/foggly-client.git</developerConnection>
+		<url>https://github.com/foggly-org/foggly-client/tree/master</url>
 	</scm>
 
 	<modules>
-		<module>foggle-kotlin-client</module>
-		<module>foggle-client-sample</module>
-		<module>foggle-core</module>
-		<module>foggle-mock</module>
-		<module>foggle-client-spring</module>
-		<module>foggle-client-sample-spring</module>
+		<module>foggly-kotlin-client</module>
+		<module>foggly-client-sample</module>
+		<module>foggly-core</module>
+		<module>foggly-mock</module>
+		<module>foggly-client-spring</module>
+		<module>foggly-client-sample-spring</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
 			<!-- Project -->
 			<dependency>
-				<groupId>org.foggle</groupId>
-				<artifactId>foggle-kotlin-client</artifactId>
+				<groupId>org.foggly</groupId>
+				<artifactId>foggly-kotlin-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.foggle</groupId>
-				<artifactId>foggle-client-spring</artifactId>
+				<groupId>org.foggly</groupId>
+				<artifactId>foggly-client-spring</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.foggle</groupId>
-				<artifactId>foggle-mock</artifactId>
+				<groupId>org.foggly</groupId>
+				<artifactId>foggly-mock</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
-			<!-- Foggle -->
+			<!-- Foggly -->
 			<dependency>
-				<groupId>org.foggle</groupId>
-				<artifactId>foggle-core</artifactId>
+				<groupId>org.foggly</groupId>
+				<artifactId>foggly-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
